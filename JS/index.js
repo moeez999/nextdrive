@@ -44,7 +44,7 @@ let mouseX = 0,
   mouseY = 0;
 let dotX = 0,
   dotY = 0;
-const speed = 0.15; // Lower is slower, smoother
+const speed = 0.1; // Lower is slower, smoother
 
 function animate() {
   dotX += (mouseX - dotX) * speed;
