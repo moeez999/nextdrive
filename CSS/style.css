@@ -132,6 +132,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
+  height: 80vh;
 }
 
 .services h2 {
@@ -146,7 +147,8 @@ img {
 .services .faq-container {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+
+  overflow: hidden;
 }
 
 .service-item {
@@ -170,28 +172,47 @@ img {
 .plus-width {
   width: 1.25rem;
 }
+
+.service-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.service-toggle img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
 .service-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-
-  padding: 0 1rem;
-  font-size: 0.95rem;
-  color: #2a2829;
+  opacity: 0;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
 }
 
 .service-item.active .service-content {
-  max-height: 300px; /* enough to fit content */
-  padding: 1rem;
+  max-height: 300px; /* adjust based on content size */
+  opacity: 1;
+  padding: 20px;
 }
 
-.service-toggle {
-  font-size: 1.2rem;
-  transition: transform 0.3s;
-}
-
-.service-item.active .service-toggle {
-  transform: rotate(45deg); /* turns + into × */
+.service-item.active .service-toggle img {
+  transform: rotate(45deg); /* Rotates plus icon */
 }
 .service-header:hover {
   color: #415573;
@@ -212,7 +233,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+
   margin-bottom: 5rem;
 }
 
@@ -497,7 +518,9 @@ textarea {
     align-items: center;
     gap: 4rem;
   }
-
+  .services {
+    height: auto;
+  }
   .hero {
     min-height: auto;
     padding-bottom: 2rem;

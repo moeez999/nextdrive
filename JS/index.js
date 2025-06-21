@@ -24,7 +24,7 @@ document.querySelectorAll(".service-header").forEach((header) => {
       .querySelectorAll(".service-item")
       .forEach((i) => i.classList.remove("active"));
 
-    // Toggle current
+    // Open if not already active
     if (!isActive) {
       item.classList.add("active");
     }
@@ -39,12 +39,13 @@ document
   });
 
 const dot = document.getElementById("dot-cursor");
+const hero = document.getElementById("hero"); // Make sure your hero section has this ID
 
 let mouseX = 0,
   mouseY = 0;
 let dotX = 0,
   dotY = 0;
-const speed = 0.1; // Lower is slower, smoother
+const speed = 0.1;
 
 function animate() {
   dotX += (mouseX - dotX) * speed;
@@ -54,9 +55,28 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-document.addEventListener("mousemove", (e) => {
+hero.addEventListener("mousemove", (e) => {
+  const rect = hero.getBoundingClientRect();
   mouseX = e.clientX;
   mouseY = e.clientY;
+  dot.style.display = "block"; // Show the dot only inside hero
 });
 
+hero.addEventListener("mouseleave", () => {
+  dot.style.display = "none"; // Hide when leaving the hero
+});
+
+// Start animation
 animate();
+
+const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  speed: 4000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  allowTouchMove: false,
+});

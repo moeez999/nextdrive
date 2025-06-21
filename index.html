@@ -7,13 +7,21 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="./CSS/style.css" />
     <title>NextDrive - Drive Smarter</title>
   </head>
   <body>
     <!-- Hero Section -->
-    <div class="hero">
+    <div class="hero" id="hero">
       <nav class="nav">
         <div class="logo">NextDrive</div>
         <div class="nav-links">
@@ -42,40 +50,46 @@
         <section id="services" class="services">
           <h2>Our Services</h2>
           <div class="faq-container">
-            <div class="service-item">
-              <div class="service-header border-custom">
+            <div class="service-item border-custom">
+              <div class="service-header">
                 <div class="service-title">Lessons Scheduling</div>
                 <div class="service-toggle">
-                  <img class="plus-width" src="./assets/plus.png" alt="" />
+                  <img class="plus-width" src="./assets/plus.png" alt="+" />
                 </div>
               </div>
               <div class="service-content">
-                Easily schedule, reschedule, or cancel lessons anytime. Stay
-                organized with real-time calendar sync and reminders.
+                Students and instructors often face miscommunication, double
+                bookings, or missed lessons. Our app introduces a shared smart
+                calendar with real-time updates—so every lesson is confirmed,
+                clear, and stress-free.
               </div>
             </div>
+
             <div class="service-item">
               <div class="service-header">
                 <div class="service-title">Everything in One Place</div>
                 <div class="service-toggle">
-                  <img class="plus-width" src="./assets/plus.png" alt="" />
+                  <img class="plus-width" src="./assets/plus.png" alt="+" />
                 </div>
               </div>
               <div class="service-content">
-                Manage students, schedules, payments, and lesson history—all
-                from one easy-to-use dashboard.
+                No more juggling between apps, calls, and messages. Our platform
+                combines scheduling, chat, and location sharing into one app
+                —making every lesson easy to plan, confirm, and manage.
               </div>
             </div>
+
             <div class="service-item">
               <div class="service-header">
                 <div class="service-title">Growth with Clarity</div>
                 <div class="service-toggle">
-                  <img class="plus-width" src="./assets/plus.png" alt="" />
+                  <img class="plus-width" src="./assets/plus.png" alt="+" />
                 </div>
               </div>
               <div class="service-content">
-                Track progress, set goals, and analyze performance with clear
-                metrics to help your tutoring business grow.
+                Driving school owners struggle to track student progress or
+                instructor performance. Our Analytics dashboard gives access to
+                performance metrics that generate more revenue.
               </div>
             </div>
           </div>
@@ -119,7 +133,13 @@
       </div>
       <!-- Social Section -->
       <section class="social-section">
-        <h2 class="social-title">Follow Us • Follow Us</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="social-title swiper-slide">Follow Us • Follow Us</div>
+            <div class="social-title swiper-slide">Follow Us • Follow Us</div>
+          </div>
+        </div>
+
         <div class="social-icons">
           <a href="#" class="social-icon"
             ><img src="./assets/Youtube.png" alt=""
