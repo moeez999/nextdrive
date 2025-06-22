@@ -23,6 +23,7 @@ document.querySelectorAll(".service-header").forEach((header) => {
     document
       .querySelectorAll(".service-item")
       .forEach((i) => i.classList.remove("active"));
+    item.classList.add("border-b-custom");
 
     // Open if not already active
     if (!isActive) {
@@ -69,14 +70,12 @@ hero.addEventListener("mouseleave", () => {
 // Start animation
 animate();
 
-const swiper = new Swiper(".mySwiper", {
+let elt = document.querySelectorAll(".slide-text > *");
+
+anime({
+  targets: elt,
+  translateX: "-100%",
+  duration: 12000,
+  easing: "linear",
   loop: true,
-  slidesPerView: "auto",
-  spaceBetween: 30,
-  speed: 4000,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-  },
-  allowTouchMove: false,
 });
